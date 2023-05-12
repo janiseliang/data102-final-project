@@ -1,0 +1,2543 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>U.S. Chronic Disease Indicators (CDI) &#8212; Data 102 Final Project</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis/EDA/EDA_janise';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data 102 Final Project</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    Analysis of Chronic Diseases and Air Quality
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preprocessing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../preprocessing.html">Data Fetching and Preprocessing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">EDA</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../EDA.html">Exploratory Data Analysis (EDA)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Research Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../question1.html">Research Question 1: Diabetes Contributing Factors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question2.html">Research Question 2:</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-Group27/main?labpath=main.ipynb/v2/gh/UCB-stat-159-s23/project-Group27/gh-pages?urlpath=lab/tree/analysis/EDA/EDA_janise.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<a href="https://github.com/UCB-stat-159-s23/project-Group27" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/analysis/EDA/EDA_janise.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>U.S. Chronic Disease Indicators (CDI)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">U.S. Chronic Disease Indicators (CDI)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-csv">From CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-cdc-api">Using CDC API</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-census-tract-level-pm2-5-concentrations-2011-2014">Daily Census Tract-Level PM2.5 Concentrations, 2011-2014</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-census-tract-level-ozone-concentrations-2011-2014">Daily Census Tract-Level Ozone Concentrations, 2011-2014</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-research-questions">Possible Research Questions</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># COPY THIS</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/data102&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://github.com/xmunoz/sodapy">sodapy</a> installation &amp; example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install sodapy
+from sodapy import Socrata
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting sodapy
+  Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+Collecting requests&gt;=2.28.1
+  Downloading requests-2.28.2-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">62.8/62.8 KB</span> <span class=" -Color -Color-Red">7.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/dist-packages (from requests&gt;=2.28.1-&gt;sodapy) (2022.12.7)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.9/dist-packages (from requests&gt;=2.28.1-&gt;sodapy) (3.4)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/dist-packages (from requests&gt;=2.28.1-&gt;sodapy) (1.26.15)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.9/dist-packages (from requests&gt;=2.28.1-&gt;sodapy) (2.0.12)
+Installing collected packages: requests, sodapy
+  Attempting uninstall: requests
+    Found existing installation: requests 2.27.1
+    Uninstalling requests-2.27.1:
+      Successfully uninstalled requests-2.27.1
+Successfully installed requests-2.28.2 sodapy-2.2.0
+</pre></div>
+</div>
+</div>
+</div>
+<section id="u-s-chronic-disease-indicators-cdi">
+<h1>U.S. Chronic Disease Indicators (CDI)<a class="headerlink" href="#u-s-chronic-disease-indicators-cdi" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-CDI-/g4ie-h725">https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-CDI-/g4ie-h725</a></p>
+<section id="from-csv">
+<h2>From CSV<a class="headerlink" href="#from-csv" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/cdi.csv&#39;</span><span class="p">)</span>
+<span class="n">cdi</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-18-d3bea021a8b3&gt;:1: DtypeWarning: Columns (10) have mixed types. Specify dtype option on import or set low_memory=False.
+  cdi = pd.read_csv(&#39;data/cdi.csv&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;YearStart&#39;, &#39;YearEnd&#39;, &#39;LocationAbbr&#39;, &#39;LocationDesc&#39;, &#39;DataSource&#39;,
+       &#39;Topic&#39;, &#39;Question&#39;, &#39;Response&#39;, &#39;DataValueUnit&#39;, &#39;DataValueType&#39;,
+       &#39;DataValue&#39;, &#39;DataValueAlt&#39;, &#39;DataValueFootnoteSymbol&#39;,
+       &#39;DatavalueFootnote&#39;, &#39;LowConfidenceLimit&#39;, &#39;HighConfidenceLimit&#39;,
+       &#39;StratificationCategory1&#39;, &#39;Stratification1&#39;, &#39;StratificationCategory2&#39;,
+       &#39;Stratification2&#39;, &#39;StratificationCategory3&#39;, &#39;Stratification3&#39;,
+       &#39;GeoLocation&#39;, &#39;ResponseID&#39;, &#39;LocationID&#39;, &#39;TopicID&#39;, &#39;QuestionID&#39;,
+       &#39;DataValueTypeID&#39;, &#39;StratificationCategoryID1&#39;, &#39;StratificationID1&#39;,
+       &#39;StratificationCategoryID2&#39;, &#39;StratificationID2&#39;,
+       &#39;StratificationCategoryID3&#39;, &#39;StratificationID3&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi</span><span class="p">[[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;GeoLocation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[()]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># columns of interest?</span>
+<span class="n">cdi_filtered</span> <span class="o">=</span> <span class="n">cdi</span><span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;Topic&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Chronic Obstructive Pulmonary Disease&quot;</span><span class="p">,</span> <span class="s2">&quot;Asthma&quot;</span><span class="p">,</span> <span class="s2">&quot;Cardiovascular Disease&quot;</span><span class="p">,</span> <span class="s2">&quot;Tobacco&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+<span class="n">cdi_filtered</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(450362, 36)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Hospitalizations for asthma&#39;, &#39;Asthma mortality rate&#39;,
+       &#39;Cancer of the oral cavity and pharynx, mortality&#39;,
+       &#39;Cancer of the prostate, mortality&#39;,
+       &#39;Invasive cancer (all sites combined), mortality&#39;,
+       &#39;Cancer of the female breast, mortality&#39;,
+       &#39;Cancer of the female cervix, mortality&#39;,
+       &#39;Cancer of the colon and rectum (colorectal), mortality&#39;,
+       &#39;Cancer of the lung and bronchus, mortality&#39;,
+       &#39;Invasive melanoma, incidence&#39;, &#39;Melanoma, mortality&#39;,
+       &#39;Mortality with end-stage renal disease&#39;,
+       &#39;Hospitalization for chronic obstructive pulmonary disease as first-listed diagnosis&#39;,
+       &#39;Hospitalization for chronic obstructive pulmonary disease as any diagnosis&#39;,
+       &#39;Hospitalization for chronic obstructive pulmonary disease as first-listed diagnosis among Medicare-eligible persons aged &gt;= 65 years&#39;,
+       &#39;Hospitalization for chronic obstructive pulmonary disease as any diagnosis among Medicare-eligible persons aged &gt;= 65 years&#39;,
+       &#39;Mortality from heart failure&#39;,
+       &#39;Hospitalization for heart failure among Medicare-eligible persons aged &gt;= 65 years&#39;,
+       &#39;Hospitalization for stroke&#39;, &#39;Pre-pregnancy hypertension&#39;,
+       &#39;Mortality due to diabetes reported as any listed cause of death&#39;,
+       &#39;Mortality with diabetic ketoacidosis reported as any listed cause of death&#39;,
+       &#39;Amputation of a lower extremity attributable to diabetes&#39;,
+       &#39;Hospitalization with diabetes as a listed diagnosis&#39;,
+       &#39;Disability among adults aged &gt;= 65 years&#39;,
+       &#39;Folic acid supplementation&#39;, &#39;Sale of cigarette packs&#39;,
+       &#39;Chronic liver disease mortality&#39;, &#39;Alcohol use before pregnancy&#39;,
+       &#39;Alcohol use among youth&#39;,
+       &#39;Local authority to regulate alcohol outlet density&#39;,
+       &#39;Binge drinking prevalence among youth&#39;,
+       &#39;Emergency department visit rate for asthma&#39;,
+       &#39;Adults aged &gt;= 18 years with arthritis who have taken a class to learn how to manage arthritis symptoms&#39;,
+       &#39;Amount of alcohol excise tax by beverage type (beer)&#39;,
+       &#39;Amount of alcohol excise tax by beverage type (wine)&#39;,
+       &#39;Amount of alcohol excise tax by beverage type (distilled spirits)&#39;,
+       &#39;Commercial host (dram shop) liability laws&#39;,
+       &#39;Per capita alcohol consumption among persons aged &gt;= 14 years&#39;,
+       &#39;Invasive cancer of the oral cavity or pharynx, incidence&#39;,
+       &#39;Invasive cancer of the prostate, incidence&#39;,
+       &#39;Invasive cancer (all sites combined), incidence&#39;,
+       &#39;Invasive cancer of the female breast, incidence&#39;,
+       &#39;Invasive cancer of the cervix, incidence&#39;,
+       &#39;Cancer of the colon and rectum (colorectal), incidence&#39;,
+       &#39;Cancer of the lung and bronchus, incidence&#39;,
+       &#39;Incidence of treated end-stage renal disease&#39;,
+       &#39;Mortality with chronic obstructive pulmonary disease as underlying cause among adults aged &gt;= 45 years&#39;,
+       &#39;Incidence of treated end-stage renal disease attributed to diabetes&#39;,
+       &#39;Mortality with chronic obstructive pulmonary disease as underlying or contributing cause among adults aged &gt;= 45 years&#39;,
+       &#39;Mortality from total cardiovascular diseases&#39;,
+       &#39;Mortality from diseases of the heart&#39;,
+       &#39;Mortality from coronary heart disease&#39;,
+       &#39;Emergency department visit rate for chronic obstructive pulmonary disease as first-listed diagnosis&#39;,
+       &#39;Emergency department visit rate for chronic obstructive pulmonary disease as any diagnosis&#39;,
+       &#39;Mortality from cerebrovascular disease (stroke)&#39;,
+       &#39;Prevalence of pre-pregnancy diabetes&#39;,
+       &#39;Hospitalization for acute myocardial infarction&#39;,
+       &#39;Prevalence of gestational diabetes&#39;, &#39;Postpartum checkup&#39;,
+       &#39;Amount of tobacco product excise tax&#39;,
+       &#39;Cigarette smoking before pregnancy&#39;,
+       &#39;Current cigarette smoking among youth&#39;,
+       &#39;Participation in daily school physical education classes among high school students&#39;,
+       &#39;Live births occurring at Baby Friendly Facilities&#39;,
+       &#39;Soda consumption among high school students&#39;,
+       &#39;Meeting aerobic physical activity guidelines among high school students&#39;,
+       &#39;Secondary schools that allow community-sponsored use of physical activity facilities by youth outside of normal school hours&#39;,
+       &#39;Infants breastfed at 6 months&#39;,
+       &#39;Receiving formula supplementation within the first 2 days of life among breastfed infants&#39;,
+       &#39;Mean maternity practices in infant nutrition care (mPINC) score&#39;,
+       &#39;Secondary schools that allow students to purchase soda or fruit drinks&#39;,
+       &#39;Secondary schools that offer less healthy foods as competitive foods&#39;,
+       &#39;Presence of regulations pertaining to screen time in early care and education settings&#39;,
+       &#39;Postpartum depressive symptoms&#39;,
+       &#39;Secondary schools that allow students to purchase sports drinks&#39;,
+       &#39;State child care regulation supports onsite breastfeeding&#39;,
+       &#39;Computer use among high school students&#39;,
+       &#39;Television viewing among high school students&#39;,
+       &#39;Median daily frequency of vegetable consumption among high school students&#39;,
+       &#39;Obesity among high school students&#39;,
+       &#39;Hospitalization for hip fracture among Medicare-eligible persons aged &gt;= 65 years&#39;,
+       &#39;Presence of regulations pertaining to avoiding sugar in early care and education settings&#39;,
+       &#39;Overweight or obesity among high school students&#39;,
+       &#39;Median daily frequency of fruit consumption among high school students&#39;,
+       &#39;Number of farmers markets per 100,000 residents&#39;,
+       &#39;Healthy weight among high school students&#39;,
+       &#39;Census tracts with healthier food retailers within � mile of boundary&#39;,
+       &#39;Farmers markets that accept Women and Infant Children (WIC) farmers market nutrition program coupons&#39;,
+       &#39;Oral health services at Federally Qualified Health Centers&#39;,
+       &#39;Presence of regulations pertaining to serving fruit in early care and education settings&#39;,
+       &#39;Presence of regulations pertaining to serving vegetables in early care and education settings&#39;,
+       &#39;Farmers markets that accept Supplemental Nutrition Assistance Program (SNAP) benefits&#39;,
+       &#39;Life expectancy at birth&#39;,
+       &#39;Premature mortality among adults aged 45-64 years&#39;, &#39;Poverty&#39;,
+       &#39;Preventive dental care before pregnancy&#39;,
+       &#39;Life expectancy at age 65 years&#39;,
+       &#39;Prevalence of 2 or more chronic conditions among Medicare-enrolled persons aged &gt;= 65 years&#39;,
+       &#39;High school completion among adults aged 18-24 years&#39;,
+       &#39;Dental visits among children and adolescents aged 1-17 years&#39;,
+       &#39;High school completion among women aged 18-44 years&#39;,
+       &#39;Health insurance coverage before pregnancy&#39;,
+       &#39;Poverty among women aged 18-44 years&#39;,
+       &#39;Preventive dental visits among children and adolescents aged 1-17 years&#39;,
+       &#39;Population served by community water systems that receive fluoridated drinking water&#39;,
+       &#39;Gini Index of income inequality&#39;,
+       &#39;States that allow stronger local tobacco control and prevention laws&#39;,
+       &#39;Current smokeless tobacco use among youth&#39;,
+       &#39;States with strong polices that require retail licenses to sell tobacco products&#39;,
+       &#39;Proportion of the population protected by a comprehensive smoke-free policy prohibiting smoking in all indoor areas of workplaces and public places, including restaurants and bars&#39;,
+       &#39;Secondary schools that have a comprehensive tobacco-free school policy in place&#39;,
+       &#39;Percent tobacco revenue to fund at CDC recommended level&#39;,
+       &#39;Asthma prevalence among women aged 18-44 years&#39;,
+       &#39;Heavy drinking among adults aged &gt;= 18 years&#39;,
+       &#39;Diabetes prevalence among women aged 18-44 years&#39;,
+       &#39;Current smoking among adults aged &gt;= 18 years&#39;,
+       &#39;All teeth lost among adults aged &gt;= 65 years&#39;,
+       &#39;Arthritis among adults aged &gt;= 18 years&#39;,
+       &#39;No tooth loss among adults aged 18-64 years&#39;,
+       &#39;Current asthma prevalence among adults aged &gt;= 18 years&#39;,
+       &#39;Mammography use among women aged 50-74 years&#39;,
+       &#39;Prevalence of chronic kidney disease among adults aged &gt;= 18 years&#39;,
+       &#39;Cholesterol screening among adults aged &gt;= 18 years&#39;,
+       &#39;Foot examination among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Arthritis among adults aged &gt;= 18 years who have diabetes&#39;,
+       &#39;Quit attempts in the past year among current smokers&#39;,
+       &#39;Dilated eye examination among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Recent mentally unhealthy days among adults aged &gt;= 18 years&#39;,
+       &#39;Heavy drinking among women aged 18-44 years&#39;,
+       &#39;Arthritis among adults aged &gt;= 18 years who are obese&#39;,
+       &#39;Binge drinking intensity among adults aged &gt;= 18 years who binge drink&#39;,
+       &#39;Arthritis among adults aged &gt;= 18 years who have heart disease&#39;,
+       &#39;Overweight or obesity among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years with diagnosed diabetes&#39;,
+       &#39;Current health care coverage among women aged 18-44 years&#39;,
+       &#39;Current smokeless tobacco use among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged &gt;= 65 years with a history of coronary heart disease&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged 18-64 years with a history of coronary heart disease or stroke&#39;,
+       &#39;Awareness of high blood pressure among women aged 18-44 years&#39;,
+       &#39;Recent activity limitation among adults aged &gt;= 18 years&#39;,
+       &#39;Self-rated health status among women aged 18-44 years&#39;,
+       &#39;Current lack of health insurance among adults aged 18-64 years&#39;,
+       &#39;At least 14 recent mentally unhealthy days among women aged 18-44 years&#39;,
+       &#39;Obesity among adults aged &gt;= 18 years&#39;,
+       &#39;Binge drinking frequency among adults aged &gt;= 18 years who binge drink&#39;,
+       &#39;High cholesterol prevalence among adults aged &gt;= 18 years&#39;,
+       &#39;Taking medicine for high blood pressure control among adults aged &gt;= 18 years with high blood pressure&#39;,
+       &#39;Visits to dentist or dental clinic among adults aged &gt;= 18 years&#39;,
+       &#39;Physical inactivity among adults aged &gt;= 18 years with arthritis&#39;,
+       &#39;Adults with diagnosed diabetes aged &gt;= 18 years who have taken a diabetes self-management course&#39;,
+       &#39;Fecal occult blood test, sigmoidoscopy, or colonoscopy among adults aged 50-75 years&#39;,
+       &#39;Prevalence of chronic obstructive pulmonary disease among adults &gt;= 18&#39;,
+       &#39;Prevalence of chronic obstructive pulmonary disease among adults &gt;= 45 years&#39;,
+       &#39;Work limitation due to arthritis among adults aged 18-64 years who have doctor-diagnosed arthritis&#39;,
+       &#39;Median daily frequency of vegetable consumption among adults aged &gt;= 18 years&#39;,
+       &#39;Median daily frequency of fruit consumption among adults aged &gt;= 18 years&#39;,
+       &#39;Prevalence of current smoking among adults &gt;= 45 years with diagnosed chronic obstructive pulmonary disease&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged &gt;= 65 years who smoke&#39;,
+       &#39;Prevalence of current smoking among adults &gt;= 18 with diagnosed chronic obstructive pulmonary disease&#39;,
+       &#39;Prevalence of depressive disorders among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Glycosylated hemoglobin measurement among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged &gt;= 65 years with diagnosed diabetes&#39;,
+       &#39;No leisure-time physical activity among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years with a history of coronary heart disease&#39;,
+       &#39;Awareness of high blood pressure among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged &gt;= 65 years with diagnosed diabetes&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged &gt;= 65 years with a history of coronary heart disease or stroke&#39;,
+       &#39;Binge drinking prevalence among adults aged &gt;= 18 years&#39;,
+       &#39;Meeting aerobic physical activity guidelines for additional and more extensive health benefits among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged &gt;= 45 years with chronic obstructive pulmonary disease&#39;,
+       &#39;Six or more teeth lost among adults aged &gt;= 65 years&#39;,
+       &#39;Timeliness of routine health care checkup among women aged 18-44 years&#39;,
+       &#39;Fair or poor health among adults aged &gt;= 18 years with arthritis&#39;,
+       &#39;Prevalence of high cholesterol among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged &gt;= 45 years with chronic obstructive pulmonary disease&#39;,
+       &#39;Prevalence of diagnosed diabetes among adults aged &gt;= 18 years&#39;,
+       &#39;Binge drinking prevalence among women aged 18-44 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years who smoke&#39;,
+       &#39;Activity limitation due to arthritis among adults aged &gt;= 18 years who have doctor-diagnosed arthritis&#39;,
+       &#39;Recent physically unhealthy days among adults aged &gt;= 18 years&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged &gt;= 65 years with asthma&#39;,
+       &#39;Fair or poor self-rated health status among adults aged &gt;= 18 years&#39;,
+       &#39;Proportion of older adults aged 50-64 years who are up to date on a core set of clinical preventive services&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged 18-64 years with diagnosed diabetes&#39;,
+       &#39;Meeting aerobic physical activity guidelines for substantial health benefits among adults aged &gt;= 18 years&#39;,
+       &#39;Influenza vaccination among noninstitutionalized adults aged 18-64 years with asthma&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years with asthma&#39;,
+       &#39;Recent Papanicolaou smear use among women aged 21-44 years&#39;,
+       &#39;Prevalence of activity limitation among adults &gt;= 45 years with diagnosed chronic obstructive pulmonary disease&#39;,
+       &#39;Severe joint pain due to arthritis among adults aged &gt;= 18 years who have doctor-diagnosed arthritis&#39;,
+       &#39;Healthy weight among adults aged &gt;= 18 years&#39;,
+       &#39;Pneumococcal vaccination among noninstitutionalized adults aged &gt;= 65 years with asthma&#39;,
+       &#39;Prevalence of high blood pressure among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Meeting aerobic physical activity guidelines for substantial health benefits and for muscle-strengthening activity among adults aged &gt;= 18 years&#39;,
+       &#39;Prevalence of sufficient sleep among adults aged &gt;= 18 years&#39;,
+       &#39;Prevalence of activity limitation among adults &gt;= 18 with diagnosed chronic obstructive pulmonary disease&#39;,
+       &#39;Overweight or obesity among women aged 18-44 years&#39;,
+       &#39;Proportion of older adults aged &gt;= 65 years who are up to date on a core set of clinical preventive services&#39;,
+       &#39;Current cigarette smoking among women aged 18-44 years&#39;,
+       &#39;Visits to dentist or dental clinic among adults aged &gt;= 18 years with diagnosed diabetes&#39;,
+       &#39;Papanicolaou smear use among adult women aged 21-65 years&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-059e1630-81cc-47c2-956f-05532285460c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YearStart</th>
+      <th>YearEnd</th>
+      <th>LocationAbbr</th>
+      <th>LocationDesc</th>
+      <th>DataSource</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Response</th>
+      <th>DataValueUnit</th>
+      <th>DataValueType</th>
+      <th>...</th>
+      <th>QuestionID</th>
+      <th>DataValueTypeID</th>
+      <th>StratificationCategoryID1</th>
+      <th>StratificationID1</th>
+      <th>StratificationCategoryID2</th>
+      <th>StratificationID2</th>
+      <th>StratificationCategoryID3</th>
+      <th>StratificationID3</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>2014</td>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>SEDD; SID</td>
+      <td>Asthma</td>
+      <td>Hospitalizations for asthma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Number</td>
+      <td>...</td>
+      <td>AST3_1</td>
+      <td>NMBR</td>
+      <td>GENDER</td>
+      <td>GENM</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-92.274491</td>
+      <td>34.748650</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018</td>
+      <td>2018</td>
+      <td>CO</td>
+      <td>Colorado</td>
+      <td>SEDD; SID</td>
+      <td>Asthma</td>
+      <td>Hospitalizations for asthma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Number</td>
+      <td>...</td>
+      <td>AST3_1</td>
+      <td>NMBR</td>
+      <td>OVERALL</td>
+      <td>OVR</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-106.133611</td>
+      <td>38.843841</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018</td>
+      <td>2018</td>
+      <td>DC</td>
+      <td>District of Columbia</td>
+      <td>SEDD; SID</td>
+      <td>Asthma</td>
+      <td>Hospitalizations for asthma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Number</td>
+      <td>...</td>
+      <td>AST3_1</td>
+      <td>NMBR</td>
+      <td>OVERALL</td>
+      <td>OVR</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-77.036871</td>
+      <td>38.907192</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017</td>
+      <td>2017</td>
+      <td>GA</td>
+      <td>Georgia</td>
+      <td>SEDD; SID</td>
+      <td>Asthma</td>
+      <td>Hospitalizations for asthma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Number</td>
+      <td>...</td>
+      <td>AST3_1</td>
+      <td>NMBR</td>
+      <td>GENDER</td>
+      <td>GENF</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-83.627580</td>
+      <td>32.839681</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2010</td>
+      <td>2010</td>
+      <td>MI</td>
+      <td>Michigan</td>
+      <td>SEDD; SID</td>
+      <td>Asthma</td>
+      <td>Hospitalizations for asthma</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Number</td>
+      <td>...</td>
+      <td>AST3_1</td>
+      <td>NMBR</td>
+      <td>RACE</td>
+      <td>HIS</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>-84.714390</td>
+      <td>44.661320</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 36 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-059e1630-81cc-47c2-956f-05532285460c')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-059e1630-81cc-47c2-956f-05532285460c button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-059e1630-81cc-47c2-956f-05532285460c');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+<section id="using-cdc-api">
+<h2>Using CDC API<a class="headerlink" href="#using-cdc-api" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">&quot;COPD&quot;</span><span class="p">,</span> <span class="c1"># Chronic Obstructive Pulmonary Disease</span>
+  <span class="s2">&quot;AST&quot;</span><span class="p">,</span> <span class="c1"># Asthma</span>
+  <span class="s2">&quot;CVD&quot;</span><span class="p">,</span> <span class="c1"># Cardiovascular Disease</span>
+  <span class="s2">&quot;TOB&quot;</span> <span class="c1"># Tobacco</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">Socrata</span><span class="p">(</span><span class="s2">&quot;chronicdata.cdc.gov&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;g4ie-h725&quot;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;topicid = &#39;COPD&#39;&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span> <span class="c1"># `where` is SQL-style</span>
+<span class="n">cdi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">cdi</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Requests made without an app_token will be subject to strict throttling limits.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;yearstart&#39;, &#39;yearend&#39;, &#39;locationabbr&#39;, &#39;locationdesc&#39;, &#39;datasource&#39;,
+       &#39;topic&#39;, &#39;question&#39;, &#39;datavaluetype&#39;, &#39;datavalue&#39;, &#39;datavaluealt&#39;,
+       &#39;stratificationcategory1&#39;, &#39;stratification1&#39;, &#39;geolocation&#39;,
+       &#39;locationid&#39;, &#39;topicid&#39;, &#39;questionid&#39;, &#39;datavaluetypeid&#39;,
+       &#39;stratificationcategoryid1&#39;, &#39;stratificationid1&#39;,
+       &#39;datavaluefootnotesymbol&#39;, &#39;datavaluefootnote&#39;, &#39;datavalueunit&#39;,
+       &#39;lowconfidencelimit&#39;, &#39;highconfidencelimit&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># geo = cdi.geolocation.map(lambda x: x[&#39;coordinates&#39;] if (type(x) is dict) else [np.nan, np.nan])</span>
+<span class="c1"># cdi[[&#39;Longitude&#39;, &#39;Latitude&#39;]] = geo.tolist()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;datavalue&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;datavalue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cdi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d89e411d-daef-46cf-b9ce-3ea1c5a46283">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>yearstart</th>
+      <th>yearend</th>
+      <th>locationabbr</th>
+      <th>locationdesc</th>
+      <th>datasource</th>
+      <th>topic</th>
+      <th>question</th>
+      <th>datavaluetype</th>
+      <th>datavalue</th>
+      <th>datavaluealt</th>
+      <th>...</th>
+      <th>topicid</th>
+      <th>questionid</th>
+      <th>datavaluetypeid</th>
+      <th>stratificationcategoryid1</th>
+      <th>stratificationid1</th>
+      <th>datavaluefootnotesymbol</th>
+      <th>datavaluefootnote</th>
+      <th>datavalueunit</th>
+      <th>lowconfidencelimit</th>
+      <th>highconfidencelimit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016</td>
+      <td>2016</td>
+      <td>OR</td>
+      <td>Oregon</td>
+      <td>SEDD; SID</td>
+      <td>Chronic Obstructive Pulmonary Disease</td>
+      <td>Hospitalization for chronic obstructive pulmon...</td>
+      <td>Number</td>
+      <td>4097.0</td>
+      <td>4097</td>
+      <td>...</td>
+      <td>COPD</td>
+      <td>COPD5_1</td>
+      <td>NMBR</td>
+      <td>OVERALL</td>
+      <td>OVR</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017</td>
+      <td>2017</td>
+      <td>OR</td>
+      <td>Oregon</td>
+      <td>SEDD; SID</td>
+      <td>Chronic Obstructive Pulmonary Disease</td>
+      <td>Hospitalization for chronic obstructive pulmon...</td>
+      <td>Number</td>
+      <td>2281.0</td>
+      <td>2281</td>
+      <td>...</td>
+      <td>COPD</td>
+      <td>COPD5_1</td>
+      <td>NMBR</td>
+      <td>GENDER</td>
+      <td>GENM</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018</td>
+      <td>2018</td>
+      <td>PR</td>
+      <td>Puerto Rico</td>
+      <td>SEDD; SID</td>
+      <td>Chronic Obstructive Pulmonary Disease</td>
+      <td>Hospitalization for chronic obstructive pulmon...</td>
+      <td>Number</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>COPD</td>
+      <td>COPD5_1</td>
+      <td>NMBR</td>
+      <td>OVERALL</td>
+      <td>OVR</td>
+      <td>-</td>
+      <td>No data available</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017</td>
+      <td>2017</td>
+      <td>SD</td>
+      <td>South Dakota</td>
+      <td>SEDD; SID</td>
+      <td>Chronic Obstructive Pulmonary Disease</td>
+      <td>Hospitalization for chronic obstructive pulmon...</td>
+      <td>Number</td>
+      <td>1015.0</td>
+      <td>1015</td>
+      <td>...</td>
+      <td>COPD</td>
+      <td>COPD5_1</td>
+      <td>NMBR</td>
+      <td>GENDER</td>
+      <td>GENM</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2015</td>
+      <td>2015</td>
+      <td>TX</td>
+      <td>Texas</td>
+      <td>SEDD; SID</td>
+      <td>Chronic Obstructive Pulmonary Disease</td>
+      <td>Hospitalization for chronic obstructive pulmon...</td>
+      <td>Number</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>COPD</td>
+      <td>COPD5_1</td>
+      <td>NMBR</td>
+      <td>GENDER</td>
+      <td>GENF</td>
+      <td>-</td>
+      <td>No data available</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d89e411d-daef-46cf-b9ce-3ea1c5a46283')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d89e411d-daef-46cf-b9ce-3ea1c5a46283 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d89e411d-daef-46cf-b9ce-3ea1c5a46283');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state_prevalance</span> <span class="o">=</span> <span class="n">cdi</span><span class="p">[</span><span class="n">cdi</span><span class="p">[</span><span class="s1">&#39;datavaluetypeid&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;AGEADJPREV&#39;</span><span class="p">]</span>
+<span class="n">state_prevalance</span> <span class="o">=</span> <span class="n">state_prevalance</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;locationabbr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;datavalue&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">})</span> <span class="c1">#, &#39;Longitude&#39;:&#39;first&#39;, &#39;Latitude&#39;:&#39;first&#39;})</span>
+<span class="n">state_prevalance</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-a7802cff-4ff0-4a1f-92a1-b84448420a41">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datavalue</th>
+    </tr>
+    <tr>
+      <th>locationabbr</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AK</th>
+      <td>38.484000</td>
+    </tr>
+    <tr>
+      <th>AL</th>
+      <td>41.612500</td>
+    </tr>
+    <tr>
+      <th>AR</th>
+      <td>42.432479</td>
+    </tr>
+    <tr>
+      <th>AZ</th>
+      <td>40.290813</td>
+    </tr>
+    <tr>
+      <th>CA</th>
+      <td>40.640541</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a7802cff-4ff0-4a1f-92a1-b84448420a41')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-a7802cff-4ff0-4a1f-92a1-b84448420a41 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-a7802cff-4ff0-4a1f-92a1-b84448420a41');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># fig = go.Figure(</span>
+<span class="c1">#   data=go.Scattergeo(</span>
+<span class="c1">#     lon = state_prevalance[&#39;Longitude&#39;],</span>
+<span class="c1">#     lat = state_prevalance[&#39;Latitude&#39;],</span>
+<span class="c1">#     mode = &#39;markers&#39;,</span>
+<span class="c1">#     marker_color = state_prevalance[&#39;datavalue&#39;],</span>
+<span class="c1">#     text = np.round(state_prevalance[&#39;datavalue&#39;], 2)</span>
+<span class="c1">#   ),</span>
+<span class="c1"># )</span>
+
+<span class="c1"># fig.update_layout(xaxis={&#39;fixedrange&#39;:True}, yaxis={&#39;fixedrange&#39;:True}) # doesn&#39;t work?</span>
+
+<span class="c1"># fig.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state_prevalance</span> <span class="o">=</span> <span class="n">state_prevalance</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;VI&quot;</span><span class="p">,</span> <span class="s2">&quot;GU&quot;</span><span class="p">,</span> <span class="s2">&quot;PR&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+    <span class="n">locations</span><span class="o">=</span><span class="n">state_prevalance</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">state_prevalance</span><span class="p">[</span><span class="s1">&#39;datavalue&#39;</span><span class="p">],</span>
+    <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>
+<head><meta charset="utf-8" /></head>
+<body>
+    <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>                <div id="a1c997a5-4304-42ec-9713-5108f28fbcc2" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a1c997a5-4304-42ec-9713-5108f28fbcc2")) {                    Plotly.newPlot(                        "a1c997a5-4304-42ec-9713-5108f28fbcc2",                        [{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"locations=%{location}<br>color=%{z}<extra></extra>","locationmode":"USA-states","locations":["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","US","UT","VA","VT","WA","WI","WV","WY"],"name":"","z":[38.484,41.6125,42.432478632478634,40.29081272084805,40.64054054054054,44.1986013986014,41.48101694915254,38.59008620689655,43.16307053941908,38.38430656934306,39.745000000000005,43.25778443113773,46.77520661157025,42.3174672489083,39.853679653679656,42.0136690647482,42.669642857142854,44.64865900383141,41.22563025210084,44.094915254237286,44.56020066889632,48.02716049382716,41.601393728222995,44.63011152416357,45.79924528301886,41.72008032128514,44.84071146245059,41.979693486590044,46.620814479638014,43.04962406015038,48.54,38.88467432950191,44.52569444444444,38.160633484162894,40.668370607028756,42.890780141843976,43.595167286245356,42.80958333333333,43.85471698113208,44.724609375,43.42891156462585,48.9008032128514,43.344545454545454,42.453198653198655,48.57333333333334,43.966409266409265,43.31454545454545,47.233755274261604,44.08466898954703,42.716017316017314,46.60472103004292,41.81861471861472],"type":"choropleth"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{},"scope":"usa"},"coloraxis":{"colorbar":{"title":{"text":"color"}},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"legend":{"tracegroupgap":0},"margin":{"t":60}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('a1c997a5-4304-42ec-9713-5108f28fbcc2');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                            </script>        </div>
+</body>
+</html></div></div>
+</div>
+</section>
+</section>
+<section id="daily-census-tract-level-pm2-5-concentrations-2011-2014">
+<h1>Daily Census Tract-Level PM2.5 Concentrations, 2011-2014<a class="headerlink" href="#daily-census-tract-level-pm2-5-concentrations-2011-2014" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://data.cdc.gov/Environmental-Health-Toxicology/Daily-Census-Tract-Level-PM2-5-Concentrations-2011/fcqm-xrf4">https://data.cdc.gov/Environmental-Health-Toxicology/Daily-Census-Tract-Level-PM2-5-Concentrations-2011/fcqm-xrf4</a></p>
+<p>This dataset and the Ozone one are very big (&gt; 8 GB), so we can download smaller amounts of data from the CDC website using an API called sodapy.</p>
+<p>I did download all the data but it takes pandas forever to read all the rows. You can read the first <span class="math notranslate nohighlight">\(n\)</span> rows using argument <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, but this only reads the top rows and you can’t filter for specific rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pm25 = pd.read_csv(&#39;data/pm2_5.csv&#39;, nrows=20000)</span>
+<span class="c1"># pm25.head()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-61564bb1-acde-4e54-a356-11e7b820e066">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>date</th>
+      <th>statefips</th>
+      <th>countyfips</th>
+      <th>ctfips</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>ds_o3_pred</th>
+      <th>ds_o3_stdd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013</td>
+      <td>03AUG2013</td>
+      <td>47</td>
+      <td>47095</td>
+      <td>47095960200</td>
+      <td>36.26229</td>
+      <td>-89.53672</td>
+      <td>40.5599</td>
+      <td>6.4340</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013</td>
+      <td>03AUG2013</td>
+      <td>47</td>
+      <td>47165</td>
+      <td>47165021103</td>
+      <td>36.26238</td>
+      <td>-86.62209</td>
+      <td>37.5527</td>
+      <td>4.3740</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2013</td>
+      <td>03AUG2013</td>
+      <td>37</td>
+      <td>37193</td>
+      <td>37193960100</td>
+      <td>36.26316</td>
+      <td>-80.94678</td>
+      <td>38.7162</td>
+      <td>5.2400</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>03AUG2013</td>
+      <td>40</td>
+      <td>40103</td>
+      <td>40103957000</td>
+      <td>36.26445</td>
+      <td>-97.28429</td>
+      <td>36.4844</td>
+      <td>5.5102</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>03AUG2013</td>
+      <td>32</td>
+      <td>32003</td>
+      <td>32003003232</td>
+      <td>36.26472</td>
+      <td>-115.30277</td>
+      <td>60.7359</td>
+      <td>5.4093</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-61564bb1-acde-4e54-a356-11e7b820e066')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-61564bb1-acde-4e54-a356-11e7b820e066 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-61564bb1-acde-4e54-a356-11e7b820e066');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># API code example from https://dev.socrata.com/foundry/data.cdc.gov/fcqm-xrf4</span>
+<span class="kn">from</span> <span class="nn">sodapy</span> <span class="kn">import</span> <span class="n">Socrata</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Socrata</span><span class="p">(</span><span class="s2">&quot;data.cdc.gov&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># arguments are SQL-style: see https://dev.socrata.com/docs/queries/</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fcqm-xrf4&quot;</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;date = &#39;01JAN2014&#39;&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">pm25</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">pm25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Requests made without an app_token will be subject to strict throttling limits.
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-a24b74bd-6eaf-4bb0-bc51-9a4298c07435">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>date</th>
+      <th>statefips</th>
+      <th>countyfips</th>
+      <th>ctfips</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>ds_pm_pred</th>
+      <th>ds_pm_stdd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972600</td>
+      <td>24.54941</td>
+      <td>-81.79179</td>
+      <td>9.9932</td>
+      <td>9.6032</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972400</td>
+      <td>24.55265</td>
+      <td>-81.79997</td>
+      <td>9.8096</td>
+      <td>9.5746</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972300</td>
+      <td>24.55602</td>
+      <td>-81.79279</td>
+      <td>9.7349</td>
+      <td>9.1891</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972000</td>
+      <td>24.55621</td>
+      <td>-81.76469</td>
+      <td>9.6942</td>
+      <td>9.0292</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972200</td>
+      <td>24.55726</td>
+      <td>-81.78251</td>
+      <td>9.6435</td>
+      <td>9.454</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>72278</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>53</td>
+      <td>53073</td>
+      <td>53073010403</td>
+      <td>48.95131</td>
+      <td>-122.77596</td>
+      <td>20.8583</td>
+      <td>15.2178</td>
+    </tr>
+    <tr>
+      <th>72279</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>53</td>
+      <td>53073</td>
+      <td>53073010301</td>
+      <td>48.9554</td>
+      <td>-122.53016</td>
+      <td>16.756</td>
+      <td>11.5158</td>
+    </tr>
+    <tr>
+      <th>72280</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>53</td>
+      <td>53073</td>
+      <td>53073010401</td>
+      <td>48.97138</td>
+      <td>-122.66349</td>
+      <td>19.8669</td>
+      <td>13.5748</td>
+    </tr>
+    <tr>
+      <th>72281</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>53</td>
+      <td>53073</td>
+      <td>53073010303</td>
+      <td>48.97593</td>
+      <td>-122.43313</td>
+      <td>14.579</td>
+      <td>10.2366</td>
+    </tr>
+    <tr>
+      <th>72282</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>53</td>
+      <td>53073</td>
+      <td>53073011000</td>
+      <td>48.98832</td>
+      <td>-123.05754</td>
+      <td>21.8249</td>
+      <td>17.3089</td>
+    </tr>
+  </tbody>
+</table>
+<p>72283 rows × 9 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a24b74bd-6eaf-4bb0-bc51-9a4298c07435')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-a24b74bd-6eaf-4bb0-bc51-9a4298c07435 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-a24b74bd-6eaf-4bb0-bc51-9a4298c07435');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pm25</span><span class="p">[</span><span class="s1">&#39;ds_pm_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm25</span><span class="p">[</span><span class="s1">&#39;ds_pm_pred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">pm25</span><span class="p">[</span><span class="s1">&#39;ds_pm_stdd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pm25</span><span class="p">[</span><span class="s1">&#39;ds_pm_stdd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">county_pm25</span> <span class="o">=</span> <span class="n">pm25</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;countyfips&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;ds_pm_pred&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># counties geojson data download</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+    <span class="n">counties</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">county_pm25</span><span class="p">[</span><span class="s1">&#39;county&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">county_pm25</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">county_pm25</span><span class="p">[</span><span class="s1">&#39;sqrt_ds_pm_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">county_pm25</span><span class="p">[</span><span class="s1">&#39;ds_pm_pred&#39;</span><span class="p">])</span>
+<span class="n">county_pm25</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-fe5573f5-96dc-45de-9fcc-341383686a8c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ds_pm_pred</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>county</th>
+      <th>sqrt_ds_pm_pred</th>
+      <th>log_ds_pm_pred</th>
+    </tr>
+    <tr>
+      <th>countyfips</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10001</th>
+      <td>11.867881</td>
+      <td>39.134715</td>
+      <td>-75.543715</td>
+      <td>10001</td>
+      <td>3.444979</td>
+      <td>2.473836</td>
+    </tr>
+    <tr>
+      <th>10003</th>
+      <td>16.112748</td>
+      <td>39.726390</td>
+      <td>-75.610755</td>
+      <td>10003</td>
+      <td>4.014069</td>
+      <td>2.779611</td>
+    </tr>
+    <tr>
+      <th>10005</th>
+      <td>11.817547</td>
+      <td>38.646260</td>
+      <td>-75.254290</td>
+      <td>10005</td>
+      <td>3.437666</td>
+      <td>2.469585</td>
+    </tr>
+    <tr>
+      <th>1001</th>
+      <td>20.942633</td>
+      <td>32.473145</td>
+      <td>-86.484390</td>
+      <td>01001</td>
+      <td>4.576312</td>
+      <td>3.041787</td>
+    </tr>
+    <tr>
+      <th>1003</th>
+      <td>20.020926</td>
+      <td>30.535920</td>
+      <td>-87.768040</td>
+      <td>01003</td>
+      <td>4.474475</td>
+      <td>2.996778</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fe5573f5-96dc-45de-9fcc-341383686a8c')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-fe5573f5-96dc-45de-9fcc-341383686a8c button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-fe5573f5-96dc-45de-9fcc-341383686a8c');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+    <span class="n">county_pm25</span><span class="p">,</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;sqrt_ds_pm_pred&#39;</span><span class="p">,</span>
+    <span class="n">geojson</span><span class="o">=</span><span class="n">counties</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output hidden; open in https://colab.research.google.com to view.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="daily-census-tract-level-ozone-concentrations-2011-2014">
+<h1>Daily Census Tract-Level Ozone Concentrations, 2011-2014<a class="headerlink" href="#daily-census-tract-level-ozone-concentrations-2011-2014" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://data.cdc.gov/Environmental-Health-Toxicology/Daily-Census-Tract-Level-Ozone-Concentrations-2011/372p-dx3h">https://data.cdc.gov/Environmental-Health-Toxicology/Daily-Census-Tract-Level-Ozone-Concentrations-2011/372p-dx3h</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">Socrata</span><span class="p">(</span><span class="s2">&quot;data.cdc.gov&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+  <span class="s2">&quot;372p-dx3h&quot;</span><span class="p">,</span>
+  <span class="n">where</span><span class="o">=</span><span class="s2">&quot;`year` = &#39;2014&#39; AND `date` LIKE &#39;01%&#39;&quot;</span><span class="p">,</span> <span class="c1"># one sample from each month</span>
+  <span class="n">select</span><span class="o">=</span><span class="s2">&quot;`countyfips`, `ds_o3_pred`&quot;</span><span class="p">,</span>
+  <span class="c1"># group=&quot;`countyfips`&quot;,</span>
+  <span class="n">limit</span><span class="o">=</span><span class="mi">1000000</span>
+<span class="p">)</span>
+
+<span class="n">ozone</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ozone</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Requests made without an app_token will be subject to strict throttling limits.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>867396
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">Socrata</span><span class="p">(</span><span class="s2">&quot;data.cdc.gov&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+  <span class="s2">&quot;372p-dx3h&quot;</span><span class="p">,</span>
+  <span class="n">where</span><span class="o">=</span><span class="s2">&quot;`date` = &#39;01JAN2014&#39;&quot;</span><span class="p">,</span>
+  <span class="n">limit</span><span class="o">=</span><span class="mi">100000</span>
+<span class="p">)</span>
+
+<span class="n">ozone</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">ozone</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Requests made without an app_token will be subject to strict throttling limits.
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-b5419e27-fc9e-4056-9e90-6cc03c32d374">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>date</th>
+      <th>statefips</th>
+      <th>countyfips</th>
+      <th>ctfips</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>ds_o3_pred</th>
+      <th>ds_o3_stdd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972600</td>
+      <td>24.54941</td>
+      <td>-81.79179</td>
+      <td>35.2535</td>
+      <td>8.1593</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972400</td>
+      <td>24.55265</td>
+      <td>-81.79997</td>
+      <td>35.0738</td>
+      <td>8.1476</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972300</td>
+      <td>24.55602</td>
+      <td>-81.79279</td>
+      <td>35.2918</td>
+      <td>8.0431</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972000</td>
+      <td>24.55621</td>
+      <td>-81.76469</td>
+      <td>35.0958</td>
+      <td>8.1774</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>01JAN2014</td>
+      <td>12</td>
+      <td>12087</td>
+      <td>12087972200</td>
+      <td>24.55726</td>
+      <td>-81.78251</td>
+      <td>35.3524</td>
+      <td>8.2237</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b5419e27-fc9e-4056-9e90-6cc03c32d374')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-b5419e27-fc9e-4056-9e90-6cc03c32d374 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-b5419e27-fc9e-4056-9e90-6cc03c32d374');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ozone</span><span class="p">[</span><span class="s1">&#39;ds_o3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ozone</span><span class="p">[</span><span class="s1">&#39;ds_o3_pred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="c1"># ozone[&#39;ds_o3_stdd&#39;] = ozone[&#39;ds_o3_stdd&#39;].astype(float)</span>
+<span class="n">county_ozone</span> <span class="o">=</span> <span class="n">ozone</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;countyfips&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;ds_o3_pred&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">})</span> <span class="c1">#, &quot;latitude&quot;: np.median, &quot;longitude&quot;: np.median})</span>
+<span class="n">county_ozone</span><span class="p">[</span><span class="s1">&#39;county&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">county_ozone</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># add leading 0 for 01001, etc</span>
+<span class="n">county_ozone</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-8ad5b8f1f5d2&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ozone</span><span class="p">[</span><span class="s1">&#39;ds_o3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ozone</span><span class="p">[</span><span class="s1">&#39;ds_o3_pred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># ozone[&#39;ds_o3_stdd&#39;] = ozone[&#39;ds_o3_stdd&#39;].astype(float)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">county_ozone</span> <span class="o">=</span> <span class="n">ozone</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;countyfips&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;ds_o3_pred&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">})</span> <span class="c1">#, &quot;latitude&quot;: np.median, &quot;longitude&quot;: np.median})</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">county_ozone</span><span class="p">[</span><span class="s1">&#39;county&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">county_ozone</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># add leading 0 for 01001, etc</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">county_ozone</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;ozone&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
+    <span class="n">county_ozone</span><span class="p">,</span>
+    <span class="n">locations</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;ds_o3_pred&#39;</span><span class="p">,</span>
+    <span class="n">geojson</span><span class="o">=</span><span class="n">counties</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output hidden; open in https://colab.research.google.com to view.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="possible-research-questions">
+<h1>Possible Research Questions<a class="headerlink" href="#possible-research-questions" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>At least one of your techniques should be either Bayesian hierarchical modeling or causal inference.</p></li>
+<li><p>You should use the same dataset to answer both questions.</p></li>
+</ul>
+<p>Options:</p>
+<ol class="arabic simple">
+<li><p>Multiple hypothesis testing / decision making</p></li>
+<li><p>Bayesian Hierarchical Modeling</p></li>
+<li><p>Prediction with GLMs and nonparametric methods</p></li>
+<li><p>Causal Inference</p></li>
+</ol>
+<p>Some sort of correlation between asthma and air quality (PM2.5 or Ozone)?</p>
+<ul class="simple">
+<li><p>causal inference? or GLM?</p></li>
+</ul>
+<p>Correlation between tobacco use and air quality? Or tobacco use and asthma?’</p>
+<p>Change in __ over the years?</p>
+<ul class="simple">
+<li><p>GLM</p></li>
+</ul>
+<p>Counties w/ higher than normal asthma/tobacco/aqi</p>
+<ul class="simple">
+<li><p>multiple hypothesis testing</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./analysis/EDA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">U.S. Chronic Disease Indicators (CDI)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-csv">From CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-cdc-api">Using CDC API</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-census-tract-level-pm2-5-concentrations-2011-2014">Daily Census Tract-Level PM2.5 Concentrations, 2011-2014</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daily-census-tract-level-ozone-concentrations-2011-2014">Daily Census Tract-Level Ozone Concentrations, 2011-2014</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#possible-research-questions">Possible Research Questions</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeffrey Fan, Leah Hong, Janise Liang, and Nick Melamed (Group 27)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
