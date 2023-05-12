@@ -1,5 +1,9 @@
-numpy
-pandas
-matplotlib
-plotly
 sodapy
+statsmodels
+pandas
+numpy
+scipy
+tqdm
+matplotlib
+seaborn
+plotly
