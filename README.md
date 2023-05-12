@@ -1,8 +1,10 @@
-# Analysis of Select Chronic Diseases and Air Quality
+# Analysis of Chronic Diseases and Air Quality
+
+This repository contains code for our Data 102 Final Project.
 
 **Group:** Janise Liang, Eduardo Madrigal, Sheryl Muttath, and Nandita Radhakrishnan
 
-This repository contains code for our Data 102 Final Project.
+## Introduction
 
 We evaluated two research questions, which has been split up into separate analysis notebooks:
 
@@ -11,7 +13,7 @@ We evaluated two research questions, which has been split up into separate analy
 2. `analysis/question2.ipynb`: Causal effect (if any) of PM 2.5 concentration on COPD (chronic obstructive pulmonary disease) prevalence.
    Used methods for causal inference using inverse-propensity weighting (IPW) on smoking, a confounding variable.
 
-# Installation
+## Installation
 
 Install all required packages to run the notebooks using `pip install -r requirements.txt`.
 
