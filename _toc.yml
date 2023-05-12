@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+parts:
+  - caption: Preprocessing
+    chapters:
+    - file: analysis/preprocessing.ipynb
+  - caption: EDA
+    chapters:
+    - file: analysis/EDA.ipynb
+  - caption: Research Questions
+    chapters:
+    - file: analysis/question1.ipynb
+    - file: analysis/question2.ipynb

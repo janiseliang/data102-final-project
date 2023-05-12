@@ -1,0 +1,31 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Data 102 Final Project
+author: Jeffrey Fan, Leah Hong, Janise Liang, and Nick Melamed (Group 27)
+copyright: "2023"
+# logo: logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/UCB-stat-159-s23/project-Group27
+  path_to_book: /
+  branch: gh-pages
+
+# Add GitHub & Binder buttons
+html:
+  use_repository_button: true
+
+launch_buttons:
+  notebook_interface        : jupyterlab
+  binderhub_url             : https://mybinder.org/v2/gh/UCB-stat-159-s23/project-Group27/main?labpath=main.ipynb
