@@ -57,7 +57,7 @@ def get_cdc_data(date, ozone=True, limit=100000):
     res.index = update_cdc_fips(res.index)
     return res
 
-def get_county_fips(fips_path="data/county_to_state_aggregation/county_fips_wikipedia.csv"):
+def get_county_fips(fips_path):
     """
     Parses wikipedia data downloaded from https://en.wikipedia.org/wiki/List_of_United_States_FIPS_codes_by_county
     CSV_PATH should be the path to the downloaded file
@@ -95,7 +95,7 @@ def get_county_fips(fips_path="data/county_to_state_aggregation/county_fips_wiki
     
     return county_fips
 
-def get_county_pops(pop_path="data/county_to_state_aggregation/county_populations.csv"):
+def get_county_pops(pop_path):
     """
     Parses csv data downloaded from https://www2.census.gov/programs-surveys/popest/tables/2010-2019/counties/totals/co-est2019-annres.xlsx
     CSV_PATH should be the path to the downloaded file
@@ -112,25 +112,25 @@ def get_county_pops(pop_path="data/county_to_state_aggregation/county_population
 
     return county_pops
 
-def add_state_abbreviations(df, abbrev_path="data/county_to_state_aggregation/state_abbreviations.csv"):
+def add_state_abbreviations(df, path):
     """
     Adds 2-letter state abbreviations to data frame based on table from
     https://www.scouting.org/resources/los/states/
     """
     
-    abbrevs = pd.read_csv(abbrev_path, header=0, names=['state', 'abbrev'])
+    abbrevs = pd.read_csv(path, header=0, names=['state', 'abbrev'])
     df = df.merge(abbrevs, left_index=True, right_on="state", how="left")
     return df
 
-def agg_county_weighted_mean(df, columns=None):
+def agg_county_weighted_mean(df, columns=None, data_dir="data"):
     """
     COLUMNS: 
     """
     if columns is None:
         columns = df.columns
 
-    fip_to_county = get_county_fips()
-    county_pops = get_county_pops()
+    fip_to_county = get_county_fips(data_dir + "/county_to_state_aggregation/county_fips_wikipedia.csv")
+    county_pops = get_county_pops(data_dir + "/county_to_state_aggregation/county_populations.csv")
 
     df = df.merge(fip_to_county, left_index=True, right_on="fips", how="left")
     df = df.merge(county_pops, on="county", how="left")
@@ -142,4 +142,4 @@ def agg_county_weighted_mean(df, columns=None):
         fn_mapper[col] = (col, wm)
     df_by_state = df.groupby("state").agg(**fn_mapper)
     
-    return add_state_abbreviations(df_by_state)
+    return add_state_abbreviations(df_by_state, data_dir + "/county_to_state_aggregation/state_abbreviations.csv")
