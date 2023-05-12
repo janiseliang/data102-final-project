@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Data 102 Final Project
-author: Jeffrey Fan, Leah Hong, Janise Liang, and Nick Melamed (Group 27)
+title: Stat 159 Final Project
+author: Janise Liang, Eduardo Madrigal, Sheryl Muttath, and Nandita Radhakrishnan
 copyright: "2023"
 # logo: logo.png
 
@@ -18,7 +18,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/UCB-stat-159-s23/project-Group27
+  url: https://github.com/janiseliang/data102-final-project
   path_to_book: /
   branch: gh-pages
 
@@ -28,4 +28,3 @@ html:
 
 launch_buttons:
   notebook_interface        : jupyterlab
-  binderhub_url             : https://mybinder.org/v2/gh/UCB-stat-159-s23/project-Group27/main?labpath=main.ipynb
